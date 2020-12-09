@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+	<title>Indovina il numero</title>
+    <style>
+        header {
+            background-color: orange;
+        }
+        h2{
+            font-family: arial, sans-serif;
+            text-align: center;
+        }
+        figure{
+            text-align: center;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header><h2>Merlino sta pensando ad un numero.<br> 
+                                Prova ad indovinarlo!</h2></header>
+   
+<script>
+    var js_mult1=3141;
+    var js_mult2=5821;
+    var js_m1=100000000;
+    var js_m2=10000;
+    var js_iseed=0;
+    var js_iseed1=0;
+    var js_iseed2=0;
+
+
+    function random(n){
+        if (js_iseed == 0){
+            now = new Date();
+            js_iseed = now.getHours() + now.getMinutes() * 60 + now.getSeconds() * 3600;
+        }
+        js_iseed1 = js_iseed / js_m2;
+        js_iseed2 = js_iseed % js_m2;
+        var tmp = (((js_iseed2 * js_mult1 + js_iseed1 * js_mult2) % js_m2) * js_m2 + (js_iseed2 * js_mult2)) % js_m1;
+        js_iseed = (tmp + 1) % js_m1;
+        return (Math.floor((js_iseed/js_m1) * n));
+    }
+
+
+    var myNumber = 0;
+    var nGuesses = 0;
+
+    function guessnum(){
+        var response;
+        var num = parseInt(document.forms[0].guess.value);
+        document.forms[0].guess.value = num; // feedback nel caso sia scorretto
+        nGuesses++; // incrementa il contatore dei tentativi
+        response = "Il tuo numero e' ";
+    
+        if (num < myNumber)    response = response + "troppo basso";
+        if (num > myNumber)    response = response + "troppo alto";
+        if (num == myNumber) {
+            response = response + " giusto!! Bravissimo!";
+            nGuesses = 0;
+            myNumber = random(100)+1;
+        }
+        document.forms[1].result.value=response;
+        document.forms[1].guesses.value=nGuesses;
+        document.forms[0].guess.focus();
+        document.forms[0].guess.select();
+        return true;
+    }
+    
+    function giveup(){
+        var response;
+        nGuesses = 0;
+        response = "Il numero e' " + myNumber +".  Riprova.";
+        myNumber = random(100)+1;
+        document.forms[1].result.value=response;
+        document.forms[1].guesses.value=nGuesses;
+        document.forms[0].guess.focus();
+        document.forms[0].guess.select();
+    }
+</script>
+
+    
+
+    <div class="d">
+        <h2>Spara un numero!</h2>
+        <script>
+            myNumber = random(100)+1;
+            nGuesses = 0;
+        </script>
+
+
+        <form onSubmit="guessnum(); return false">
+            Scrivi numero: <input TYPE="text" name="guess">
+            <input TYPE="button" VALUE="     Prova...   " onClick="guessnum()">
+        <input TYPE="button" VALUE="  Soluzione  " onClick="giveup()">
+        </form>
+
+        <form>
+            <pre>
+                Tentativo numero: <input TYPE="text" NAME="guesses" SIZE=3><br>
+                INFO: <INPUT TYPE="text" NAME="result" size="30">
+            </pre>
+        </form>
+	</div>
+
+    <figure> 
+        <img src="https://1.bp.blogspot.com/-BYSC39ZeFdA/UHoGye4jJDI/AAAAAAAABoc/vKDi_CdfWTs/s1600/merlin-colin-morgan-in-un-immagine-promozionale-della-quinta-stagione-251344.jpg" alt="IndovinaIlNumero">
+    </figure>
+    
+</body>
+</html>

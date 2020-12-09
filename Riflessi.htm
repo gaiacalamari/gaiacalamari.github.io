@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>Prova i tuoi riflessi</title>
+	<style>
+		header {
+			background-color: yellow;
+			text-align: center;
+		}
+		body{
+			font-family: arial, sans-serif;
+		}
+		p,div{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h2>Allena e migliora i tuoi riflessi per diventare un cavaliere di Camelot</h2>
+	</header>
+	<p>Prova i tuoi riflessi!<br>
+	Premi "Start" per iniziare e premi "Stop" quando il box cambia colore</p>
+
+	<script>
+		var startTime=new Date();
+		var endTime=new Date();
+		var startPressed=false;
+		var bgChangeStarted=false;
+		var maxWait=20;
+		var timerID;
+		var colors=new Array("tomato","chocolate","limegreen","crimson","darkslategray","mediumslateblue",
+			"cornflowerblue","darkorchid","darkkhaki","coral","darkolivegreen","cadetblue")
+
+		if (document.all||document.getElementById)
+			document.write('<div id="reflex" style="width:135px;height:135px;position:relative;left:600px;border:1px solid black" onClick="stopTest()"></div>')
+
+		function startTest(){
+        	if (document.all)
+        		document.all.reflex.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+        	else if (document.getElementById)
+				document.getElementById("reflex").style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+        	else if (document.layers)
+        		document.reflexns.document.reflexns_sub.document.bgColor=colors[Math.floor(Math.random()*colors.length)];
+			bgChangeStarted=true;
+			startTime=new Date();
+		}
+
+		function remark(responseTime){
+			var responseString="";
+			if (responseTime < 0.20)
+				responseString="Bravissimo!";
+			if (responseTime >= 0.20 && responseTime < 0.33)
+				responseString="Bravo!";
+			if (responseTime >=0.33 && responseTime < 0.40)
+				responseString="Potresti fare meglio...";
+			if (responseTime >=0.40 && responseTime < 0.60)
+				responseString="Continua ad allenarti!";
+			if (responseTime >=0.60 && responseTime < 1)
+				responseString="Sei ubriaco?";
+			if (responseTime >=1)
+				responseString="Ti sei addormentato?";	
+			return responseString;
+		}
+
+		function stopTest(){
+			if(bgChangeStarted){
+				endTime=new Date();
+				var responseTime=(endTime.getTime()-startTime.getTime())/1000;
+            	if (document.all)
+					document.all.reflex.style.backgroundColor="white";
+                else if (document.getElementById)
+					document.getElementById("reflex").style.backgroundColor="white";
+                else if (document.layers)
+                	document.reflexns.document.reflexns_sub.document.bgColor="white";      
+				alert("Ci hai messo: " + responseTime + " secondi per schiacciare stop " + "\n" + remark(responseTime));
+				startPressed=false;
+				bgChangeStarted=false;
+			}
+			else{
+				if (!startPressed){
+					alert("Schiaccia start per far partire il test");
+				}
+				else{       
+					clearTimeout(timerID);
+					startPressed=false;             
+					alert("Hai premuto troppo presto!");
+				}               
+			}
+		}
+
+		var randMULTIPLIER=0x015a4e35;
+		var randINCREMENT=1;
+		var today=new Date();
+		var randSeed=today.getSeconds();
+		function randNumber(){
+			randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+			return((randSeed >> 15) & 0x7fff) / 32767;
+		}
+
+		function startit(){
+			if(startPressed){
+				alert("Già partito! Premi stop per stoppare");
+				return;
+			}
+			else{
+				startPressed=true; 
+				timerID=setTimeout('startTest()', 6000*randNumber());
+			}
+		}
+	</script> 
+	<br>
+	<div>
+		<form name="response">
+			<input type="button" value="  start  " onClick="startit()" style="font-weight:bold">
+			<input type="button" value="  stop  " onClick="stopTest()" style="font-weight:bold">
+		</form>
+	</div>
+	<div>
+		<h3>Come verrai valutato:</h3>
+			Tempo di risposta minore di 0,20 secondi - Bravissimo!<br>
+			Tempo di risposta compreso tra 0,20 secondi e 0,33 secondi - Bravo!<br>
+			Tempo di risposta compreso tra 0,33 secondi e 0,40 secondi - Potresti fare meglio...<br>
+			Tempo di risposta compreso tra 0,40 secondi e 0,60 secondi - Continua ad allenarti!<br>
+			Tempo di risposta compreso tra 0,60 secondi e 1,0 secondi - Sei ubriaco?<br>
+			Tempo di risposta maggiore di 1,0 secondi - Ti sei addormentato?<br><br>
+		
+	</div>
+
+	<br><br>
+	<img src="https://www.fantasticinema.com/wp-content/uploads/2019/04/Merlin-03.jpg" alt="DiventaCavaliere">
+</body>
+
+</html>

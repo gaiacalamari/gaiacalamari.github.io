@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Learning English</title>
+
+	<style>
+		header{
+			text-align: center;
+		}
+		body {
+			font-family: arial, sans-serif;
+		}	
+		td, th {
+			border:1px solid #ddd;
+			padding:8px;
+		}	
+		.d{
+			text-align: center;
+		}
+		h4{
+			text-align: center;
+
+		}
+		footer{
+			position: absolute;
+			top: 5700px; 
+			left: 500px
+		}
+	</style>
+	<script>
+		function on(colore) {
+			event.srcElement.style.backgroundColor=colore; //valuta lo stile dell'elemento che ha attivato l'evento
+		}
+		function no(){
+			alert("Hai sbagliato! Provaci ancora!");
+		}
+		function yes(){
+			alert("Bravissimo/a hai risposto correttamente!");
+		}
+	</script>
+</head>
+<body>
+	<div style="position: absolute;top:30px;">
+		<input style="width: 200px; height: 50px;" type="button" value="Torna alla Home" class="submit" onmouseover="on('yellow')" onmouseout="on('white')" onClick="javascript:location.href='index.html'">
+	</div>
+	<div style="position: absolute;top:30px; left: 210px;">
+		<input style="width: 200px; height: 50px;" type="button" value="Torna ai Giochi" class="submit" onmouseover="on('orange')" onmouseout="on('white')" onClick="javascript:location.href='Giochi.html'">
+	</div>
+	<header>
+		<h1 style="color: red;">Impara l'inglese con Merlino</h1>
+		<h3 style="color: blue;">Guarda il video e rispondi alle domande</h3>
+	</header>
+<div style="position: absolute; top: 30px; right: 230px;">
+</div>
+	<div>
+		<h4>Prima domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena1.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 175px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"snake"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Cane" style="width: 60px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Serpente" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Drago" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Cavallo" style="width: 90px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 43%;">
+				<form style="position: absolute; top: 175px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"What are you doing with that?"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Che cosa hai fatto oggi?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Quando userai quella cosa?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Che ci fai con quello?" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Dove devi andare con quello?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+	<div>
+		<h4>Seconda domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena2.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 525px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"Are you using magic again?"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Perché usi ancora la magia?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Cosa stai facendo con la magia?" style="width: 220px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Stai facendo ancora le pulizie?" style="width: 220px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Stai usando ancora la magia?" style="width: 220px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+
+	<div>
+		<h4>Terza domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena3.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 920px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"enough"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Solamente" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Abbastanza" style="width: 110px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Poco" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 41%;">
+				<form style="position: absolute; top: 920px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"We wanna keep it that way"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Vogliamo che rimanga così" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Siamo fortunati che sia così" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="E' meglio in questo modo" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+	<div>
+		<h4>Quarta domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena4.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 1250px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"sorry"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Insomma" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Uffa" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Scusa" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Ecco" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 41%;">
+				<form style="position: absolute; top: 1250px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"kitchen"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Bagno" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Camera da letto" style="width: 150px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Salotto" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+	<div>
+		<h4>Quinta domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena5.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 1650px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"You should go with him"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Dovresti andare con lui" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Dovresti venire con me" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Potresti accompagnarlo" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+<div>
+	<h4>Sesta domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena7.mp4">
+		</video>
+			<aside style="float: right;width: 68%;">
+				<form style="position: absolute; top: 1965px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"I feel the same"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Provo la stessa cosa" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Sento che sbagli" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Penso che vada bene" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 40%;">
+				<form style="position: absolute; top: 1965px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"Sure you know what it means..."</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Pensi di esserne sicuro..." style="width: 220px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Credi che vada bene..." style="width: 220px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sicuro di sapere cosa significa..." style="width: 220px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 220px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+			<aside style="float: right;width: 68%;">
+				<form style="position: absolute; top: 2220px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"supercilious"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Antipatico" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Altezzoso" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 40%;">
+				<form style="position: absolute; top: 2230px;">
+					<fieldset style="width: 95%;">
+						<legend><b>"Overbearing"</b> in inglese significa <b>prepotente</b>?</legend>
+						<p>	
+							<input type="button" value="Vero" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Falso" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<div><h4>Settima domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena8.mp4">
+		</video>
+			<aside style="float: right;width: 68%;">
+				<form style="position: absolute; top: 2480px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"servant"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Serpente" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Servitore" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Riservato" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 45%;">
+				<form style="position: absolute; top: 2480px;">
+					<fieldset style="width: 95%;">
+						<legend><b>"Brave"</b> in inglese significa <b>coraggioso</b>?</legend>
+						<p>	
+							<input type="button" value="Vero" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Falso" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+			<aside style="float: right;width: 17%;">
+				<form style="position: absolute; top: 2470px;">
+					<fieldset style="width: 75%;">
+						<legend><b>"To be honest"</b> in inglese significa <b>ad essere onesti</b>?</legend>
+						<p>	
+							<input type="button" value="No" style="width: 40px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sì" style="width: 40px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+		</div>
+
+	<div>
+		<h4>Ottava domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena9.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 2760px;">
+					<fieldset style="width: 42%;">
+						<legend><b>"I want you to know that I never doubted you"</b> in inglese significa <b>volevo che sapessi che non ho mai dubitato di te</b>?</legend>
+						<p>	
+							<input type="button" value="Vero" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Falso" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 30%;">
+				<form style="position: absolute; top: 2750px;">
+					<fieldset style="width: 80%;">
+						<legend>Cosa significa <b>"I'm an open book"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Nessuno dei seguenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Adoro leggere libri" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sono un libro aperto" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+	<div>
+		<h4>Nona domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena10.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 3050px;">
+					<fieldset style="width: 42%;">
+						<legend><b>"I need to talk to you"</b> in inglese significa <b>ho bisogno di mangiare</b>?</legend>
+						<p>	
+							<input type="button" value="Vero" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Falso" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 42%;">
+				<form style="position: absolute; top: 3030px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"I sometimes wonder if you know who I am"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Nessuno dei seguenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="A volte mi chiedo se sai chi sono io" style="width: 250px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="A volte penso che tu non sappia chi tu sia" style="width: 300px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+
+	<div>
+		<h4>Decima domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena11.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 3360px;">
+					<fieldset style="width: 60%;">
+						<legend><b>"Shut up"</b> in inglese significa <b>stai zitto</b>?</legend>
+						<p>	
+							<input type="button" value="Falso" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Vero" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 45%;">
+				<form style="position: absolute; top: 3330px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"thinking"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Mangiando" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Pensando" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Rosicando" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+			<aside style="float: right;width: 20%;">
+				<form style="position: absolute; top: 3360px;">
+					<fieldset style="width: 80%;">
+						<legend><b>"King"</b> in inglese significa <b>ré</b>?</legend>
+						<p>	
+							<input type="button" value="No" style="width: 40px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sì" style="width: 40px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+	<div>
+		<h4>Undicesima domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena12.mp4">
+		</video>
+			<aside style="float: right;width: 65%;">
+				<form style="position: absolute; top: 3650px;">
+					<fieldset style="width: 90%;">
+						<legend><b>"Just this one"</b> in inglese significa <b>già sei qua</b>?</legend>
+						<p>	
+							<input type="button" value="Falso" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Vero" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+
+	<div>
+	<h4>Dodicesima domanda del Quiz</h4>
+		<video controls="controls" style="width: 30%;">
+			<source src="image/scena13.mp4">
+		</video>
+			<aside style="float: right;width: 68%;">
+				<form style="position: absolute; top: 4000px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"job"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Gioco" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Lavoro" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 45%;">
+				<form style="position: absolute; top: 4000px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"boring"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Arrogante" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Antipatico" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Noioso" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+			<aside style="float: right;width: 68%;">
+				<form style="position: absolute; top: 4220px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"joke"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Giullare" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Scherzo" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside style="float: right;width: 45%;">
+				<form style="position: absolute; top: 4250px;">
+					<fieldset style="width: 95%;">
+						<legend><b>"Fun"</b> in inglese significa <b>funzionale</b>?</legend>
+						<p>	
+							<input type="button" value="Falso" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Vero" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+	</div>
+<br><br><br><br><br><br><br><br><br>
+<div class="d">
+		<video poster="miniatura.jpg" controls style="width: 50%;">
+			<source src="image/scena6.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		</video>
+
+		<h4 style="color: red;">Sei quasi arrivato alla fine del Quiz</h4>
+		<h5 style="color: blue;">Sei davvero bravo? Dimostralo rispondendo a queste ultime domande!</h5>			
+	</div>
+	<div>
+			<aside>
+				<form style="position: absolute; top: 5100px; left: 50px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"child"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Cono" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Cialda" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Bambino" style="width: 70px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Adulto" style="width: 70px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside>
+				<form style="position: absolute; top: 5100px; left: 450px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"It's your birthday"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="E' il tuo compleanno" style="width: 200px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="E' il tuo giorno fortunato" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Ti divertirai un sacco" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside>
+				<form style="position: absolute; top: 5100px; right: 60px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"entertain you"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Chiamarti" style="width: 110px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sollecitarti" style="width: 110px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Intrattenerti" style="width: 110px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Parlarti" style="width: 100px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	
+			<aside>
+				<form style="position: absolute; top: 5400px; left: 50px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"Did you see that?"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Guarda cosa fanno!" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Ti sei girato?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Hai gridato?" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="L'hai visto?" style="width: 200px; height: 30px;"  onclick="yes();on('limegreen')">
+						</p>
+						<p>	
+							<input type="button" value="Nessuno dei precedenti" style="width: 170px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside>
+				<form style="position: absolute; top: 5400px; left: 470px;">
+					<fieldset style="width: 90%;">
+						<legend>Cosa significa <b>"mind"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Nessuno dei seguenti" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Mandarino" style="width: 150px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Minuzioso" style="width: 150px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Mente" style="width: 100px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>
+			<aside>
+				<form style="position: absolute; top: 5400px; right: 60px;">
+					<fieldset style="width: 95%;">
+						<legend>Cosa significa <b>"I'm still more intelligent that you"</b> in inglese?</legend>
+						<p>	
+							<input type="button" value="Sono già molto intelligente" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Si sa che sono intelligente" style="width: 200px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Tu lo sai che sono intelligente" style="width: 250px; height: 30px;" onclick="on('#ff7b5a');no()">
+						</p>
+						<p>	
+							<input type="button" value="Sono comunque più intelligente di te" style="width: 250px; height: 30px;" onclick="yes();on('limegreen')">
+						</p>
+					</fieldset>
+				</form>
+			</aside>	
+	</div>
+
+
+	<footer>
+		<div style="position: relative;left: -50px;"><h4 style="color: red;">Conta quante domande hai fatto corrette al primo colpo</h4>
+		<h4 style="color: blue;">Guarda che voto hai preso!</h4></div>
+			<table>
+				<tr><td><b>Domande corrette</b></td><td><b>Voto</b></td></tr>
+				<tr><td>Minore di 15</td><td>Gravemente insufficiente</td></tr>
+				<tr><td>Tra 15 e 17</td><td>Insufficiente (5/10)</td></tr>
+				<tr><td>Tra 18 e 20</td><td>Sufficiente (6/10)</td></tr>
+				<tr><td>Tra 21 e 23</td><td>Discreto (7/10)</td></tr>
+				<tr><td>Tra 24 e 26</td><td>Buono (8/10)</td></tr>
+				<tr><td>Tra 27 e 28</td><td>Distinto (9/10)</td></tr>
+				<tr><td>Tra 29 e 31</td><td>Ottimo (9 e mezzo/10)</td></tr>
+				<tr><td>Oltre 31</td><td>Eccellente (10/10)</td></tr>
+			</table>
+		<div style="position: absolute;top:450px; left: -30px;">
+			<input style="width: 200px; height: 50px;" type="button" value="Torna alla Home" class="submit" onmouseover="on('yellow')" onmouseout="on('white')" onClick="javascript:location.href='index.html'">
+		</div>
+		<div style="position: absolute;top:450px; left: 180px;">
+			<input style="width: 200px; height: 50px;" type="button" value="Torna ai Giochi" class="submit" onmouseover="on('orange')" onmouseout="on('white')" onClick="javascript:location.href='Giochi.html'">
+		<br><br><br>
+		</div>
+	</footer>
+</body>
+</html>

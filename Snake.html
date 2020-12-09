@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>Snake +</title>
+	<style>
+		head,body{
+            background-color: #E0FFFF;
+        }
+        h1{
+        	text-align: center;
+        	font-family: arial, sans-serif;
+        	color: black;
+        }
+		div{
+			text-align: center;
+			font-family: arial, sans-serif;
+			color: #050402;
+		}
+		header{
+			background-color: green;
+			position: relative; left: 500px;
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<header>
+        <h1>SNAKE +</h1>
+   	</header>
+   	
+   	<div>
+   		<input type="button" value="Pausa" onclick="alert('Riprendiamo?')">
+    	<input type="button" value="Fine!" onclick="alert('FINE DEL GIOCO!', window.location.reload())">
+    	<button onClick="javascript:location.href='file:Snake%20Game.html'">Torna Indietro</button><br>
+    	<br>Questa volta, per sconfiggere il serpente, <br>
+    	fagli mangiare 15 mele avvelenate!
+    </div><br>
+	<div>
+		<canvas id="gc" width="400" height="400"></canvas>
+	</div>
+		<script>
+		var score = 0;
+		window.onload=function() {
+			canv=document.getElementById("gc");
+			ctx=canv.getContext("2d");
+			document.addEventListener("keydown",keyPush);
+			setInterval(game,100);
+		}
+		px=py=10;
+		gs=tc=20;
+		ax=ay=15;
+		xv=yv=0;
+		trail=[];
+		tail = 5;
+
+		function game() {
+			px+=xv;
+			py+=yv;
+			if(px<0) {
+				px= tc-1;
+			}
+			if(px>tc-1) {
+				px= 0;
+			}
+			if(py<0) {
+				py= tc-1;
+			}
+			if(py>tc-1) {
+				py= 0;
+			}
+			ctx.fillStyle="black";
+			ctx.fillRect(0,0,canv.width,canv.height);
+
+			ctx.fillStyle="lime";
+			for(var i=0;i<trail.length;i++) {
+				ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+				if(trail[i].x==px && trail[i].y==py) {
+					tail = 5;
+					score=0;
+				}
+			}
+			trail.push({x:px,y:py});
+			while(trail.length>tail) {
+			trail.shift();
+			}
+
+			if(ax==px && ay==py) {
+				tail++;
+				ax=Math.floor(Math.random()*tc);
+				ay=Math.floor(Math.random()*tc);
+				score++;
+				if(score==15){
+					alert("SEI UN CAMPIONE! HAI VINTO!");
+					window.location.reload();
+				}
+			}
+			ctx.fillStyle="red";
+			ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+			drawScore();
+		}
+		function drawScore() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "#b6b3b3";
+            ctx.fillText("Score: "+score, 8, 20);
+        }
+		function keyPush(evt) {
+			switch(evt.keyCode) {
+				case 37:
+					xv=-1;yv=0;
+					break;
+				case 38:
+					xv=0;yv=-1;
+					break;
+				case 39:
+					xv=1;yv=0;
+					break;
+				case 40:
+					xv=0;yv=1;
+					break;
+			}
+		}
+</script>
+</body>
+</html>
