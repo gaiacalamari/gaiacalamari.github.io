@@ -5,6 +5,15 @@
 	<title>Learning English</title>
 
 	<style>
+		@media only screen (max-width:320px) {};
+	@media only screen and (min-width: 321px) and (max-width: 480px) {}
+		#contenitore {
+			max-width: 60em;                   
+		}
+		p {
+		font-size =1em                  /*    16px / 16px  = 1em              */
+		line-height:1.125em;            /*    18px  / 16px = 1.125em    */
+		}
 		header{
 			text-align: center;
 		}
@@ -45,9 +54,8 @@
 		<h1 style="color: red;">Impara l'inglese con Merlino</h1>
 		<h3 style="color: blue;">Guarda il video e rispondi alle domande</h3>
 	</header>
-<div style="position: absolute; top: 30px; right: 230px;">
-</div>
-	<div>
+
+	<div id="contenitore">
 		<h4>Prima domanda del Quiz</h4>
 		<video controls="controls" style="width: 30%;">
 			<source src="image/scena1.mp4">
