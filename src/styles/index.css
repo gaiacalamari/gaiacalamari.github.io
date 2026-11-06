@@ -1,0 +1,161 @@
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/instrument-serif/latin-400.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────────── Design tokens ─────────────
+   The two themes are designed separately, not inverted:
+   dark relies on luminous hairlines and glow, light on paper surfaces and layered shadows. */
+@layer base {
+  :root, [data-theme='dark'] {
+    color-scheme: dark;
+    --bg: 10 14 21;            /* #0A0E15 anthracite */
+    --surface: 16 22 33;       /* #101621 night blue */
+    --raised: 23 31 46;        /* #171F2E */
+    --line: 36 47 66;          /* #242F42 */
+    --ink: 230 236 243;        /* #E6ECF3 */
+    --muted: 145 158 178;      /* #919EB2 */
+    --accent: 92 225 230;      /* #5CE1E6 cyan */
+    --accent2: 124 156 255;    /* #7C9CFF night-sky blue, used only in glows */
+    --on-accent: 4 30 34;
+    --ok: 116 222 160;
+    --shadow-card: inset 0 1px 0 rgb(255 255 255 / .04), 0 1px 2px rgb(0 0 0 / .4);
+    --shadow-lift: inset 0 1px 0 rgb(255 255 255 / .06), 0 18px 40px -18px rgb(0 0 0 / .7), 0 0 0 1px rgb(var(--accent) / .18);
+    --shadow-float: 0 30px 80px -30px rgb(0 0 0 / .8), 0 0 0 1px rgb(255 255 255 / .05);
+    --glow-a: rgb(var(--accent) / .16);
+    --glow-b: rgb(var(--accent2) / .14);
+    --grid: rgb(var(--line) / .9);
+  }
+  [data-theme='light'] {
+    color-scheme: light;
+    --bg: 246 248 251;         /* #F6F8FB */
+    --surface: 255 255 255;
+    --raised: 238 242 247;
+    --line: 220 227 236;
+    --ink: 13 23 38;           /* #0D1726 */
+    --muted: 82 96 116;        /* #526074, 6.4:1 on bg */
+    --accent: 6 120 128;       /* #067880, 5.2:1 on white */
+    --accent2: 51 85 209;
+    --on-accent: 255 255 255;
+    --ok: 20 128 74;
+    --shadow-card: 0 1px 2px rgb(13 23 38 / .05), 0 2px 8px -4px rgb(13 23 38 / .06);
+    --shadow-lift: 0 2px 4px rgb(13 23 38 / .04), 0 24px 48px -24px rgb(13 23 38 / .25), 0 0 0 1px rgb(var(--accent) / .22);
+    --shadow-float: 0 1px 2px rgb(13 23 38 / .06), 0 40px 80px -40px rgb(13 23 38 / .35);
+    --glow-a: rgb(var(--accent) / .12);
+    --glow-b: rgb(var(--accent2) / .09);
+    --grid: rgb(var(--line) / 1);
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    font-size: 1.0625rem; line-height: 1.6;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: background-color .4s ease, color .4s ease;
+  }
+  ::selection { background: rgb(var(--accent) / .28); }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 6px; }
+  img { max-width: 100%; height: auto; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+/* ───────────── Components ───────────── */
+@layer components {
+  .page { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
+  .section { @apply relative py-24 sm:py-32; }
+  .h2 { @apply text-[2.1rem] leading-[1.08] sm:text-5xl font-semibold; letter-spacing: -0.03em; }
+  .lede { @apply mt-5 max-w-prose text-muted text-lg leading-relaxed; }
+  .kicker { @apply inline-flex items-center gap-2.5 text-[0.95rem] font-medium text-accent; }
+  .kicker::before { content: ''; @apply h-px w-6 bg-accent; }
+
+  .card { @apply rounded-2xl border border-line bg-surface shadow-card; }
+  .card-hover { @apply transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:shadow-lift hover:border-accent/40; }
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-[0.95rem] font-medium min-h-[46px]
+           transition-[transform,background-color,border-color,color,box-shadow] duration-200 ease-out active:scale-[.97];
+  }
+  .btn-primary { @apply btn bg-accent text-on-accent shadow-[0_8px_24px_-10px_rgb(var(--accent)/.7)] hover:shadow-[0_12px_32px_-10px_rgb(var(--accent)/.85)] hover:-translate-y-0.5; }
+  .btn-ghost { @apply btn border border-line bg-surface/60 text-ink backdrop-blur hover:border-accent/60 hover:text-accent hover:-translate-y-0.5; }
+  .btn-disabled { @apply btn border border-dashed border-line text-muted cursor-not-allowed; }
+  .btn-sm { @apply px-3.5 py-2 text-sm min-h-[40px] rounded-lg; }
+
+  .link { @apply text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent; }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-muted min-h-[38px]
+           transition-colors duration-200 hover:text-ink hover:border-muted;
+  }
+  .chip[aria-pressed='true'] { @apply border-accent/70 bg-accent/10 text-ink; }
+  .tag { @apply inline-flex items-center rounded-md border border-line bg-raised/60 px-2 py-0.5 text-xs text-muted; }
+  .hash { @apply font-mono text-[0.78rem] text-muted tracking-tight; }
+  .gradient-text {
+    background: linear-gradient(180deg, rgb(var(--ink)) 30%, rgb(var(--ink) / .62));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+}
+
+/* ───────────── Effects ───────────── */
+/* Cursor spotlight on interactive cards (vars set by <Spotlight>) */
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--accent) / .11), transparent 45%);
+  opacity: 0; transition: opacity .35s ease;
+}
+.spot:hover::before { opacity: 1; }
+
+/* Scroll reveal */
+[data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2,.8,.2,1) var(--d, 0ms), transform .8s cubic-bezier(.2,.8,.2,1) var(--d, 0ms); }
+[data-reveal='fade'] { transform: none; }
+[data-reveal='scale'] { transform: scale(.97); }
+[data-reveal][data-in] { opacity: 1; transform: none; }
+
+/* Hero: acquisition log writes itself once */
+@keyframes log-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.log-line { opacity: 0; animation: log-in .4s ease-out forwards; }
+@keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.log-bar { transform-origin: left; animation: fill 1.6s cubic-bezier(.4,0,.2,1) .3s both; }
+
+/* Hero background traces */
+@keyframes trace { to { stroke-dashoffset: -400; } }
+.trace { stroke-dasharray: 6 194; animation: trace 9s linear infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.floaty { animation: float 6s ease-in-out infinite; }
+@keyframes cue { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(8px); opacity: 0; } 100% { opacity: 0; } }
+.cue-dot { animation: cue 1.8s ease-in-out infinite; }
+
+/* Marquee */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 38s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+
+/* Method connector line */
+.connector { transform-origin: left; transform: scaleX(0); transition: transform 1.4s cubic-bezier(.4,0,.2,1) .2s; }
+[data-in] .connector { transform: scaleX(1); }
+
+/* Panel switch in the project showcase */
+@keyframes panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.panel-in { animation: panel-in .45s cubic-bezier(.2,.8,.2,1); }
+
+/* FAQ accordion */
+.acc { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.2,.8,.2,1); }
+.acc[data-open='true'] { grid-template-rows: 1fr; }
+.acc > div { overflow: hidden; }
+
+/* Theme switch: circular reveal (View Transitions API) */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .log-line { opacity: 1; animation: none; }
+  .log-bar, .trace, .floaty, .cue-dot, .marquee, .panel-in { animation: none; }
+  .connector { transform: none; transition: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
