@@ -51,7 +51,7 @@ const it: Dict = {
   expertise: {
     kicker: 'Competenze',
     title: 'Competenze di digital forensics',
-    intro: 'Ogni area rimanda al lavoro pubblico che la documenta, come un rilievo rimanda alla sua fonte.',
+    intro: 'Ogni area rimanda ad un lavoro pubblicato su GitHub.',
     documented: 'Documentato da', interest: 'Area di interesse. Nessun lavoro pubblico per ora.',
     tool: 'Tool', article: 'Articolo', sources: 'fonti', source1: 'fonte',
   },
