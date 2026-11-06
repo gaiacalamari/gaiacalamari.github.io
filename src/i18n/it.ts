@@ -23,8 +23,8 @@ const it: Dict = {
   about: {
     kicker: 'Chi sono',
     title: 'Chi sono',
-    p1: 'Sono un’analista di informatica forense e lavoro in Italia. Il mio lavoro riguarda le evidenze digitali: acquisirle in modo che reggano, estrarne ciò che conta e spiegare con chiarezza cosa mostrano.',
-    p2: 'Accanto all’attività forense sviluppo strumenti open source per le parti del lavoro che non dovrebbero mai essere fatte a mano due volte: acquisizioni web, export da casi X-Ways, analisi di PDF e immagini, report delle chat. Su Stranger Forensics scrivo di metodologie, artefatti e challenge CTF.',
+    p1: 'Sono un’analista di informatica forense con sede in Italia, specializzata in acquisizione, analisi e interpretazione di evidenze digitali. Il mio lavoro si concentra sulla corretta gestione delle evidenze informatiche, garantendone l'integrità, l'affidabilità e la tracciabilità durante tutte le fasi dell'attività forense. ',
+    p2: 'Parallelamente, progetto e sviluppo strumenti open-source e soluzioni di automazione per ottimizzare i processi investigativi, ridurre le attività ripetitive e rendere i workflow più efficienti e riproducibili. Su Stranger Forensics scrivo articoli, metodologie e challenge CTF.',
     stats: { repos: 'Repository open source', posts: 'Articoli su Stranger Forensics', ctf: 'Challenge documentate', langs: 'Linguaggi nei miei tool' },
     statsNote: 'Conteggi in tempo reale da GitHub e WordPress.',
     approachTitle: 'I principi che integro in ogni tool',
