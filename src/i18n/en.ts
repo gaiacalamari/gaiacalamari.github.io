@@ -49,7 +49,7 @@ const en = {
   expertise: {
     kicker: 'Expertise',
     title: 'Digital forensics expertise',
-    intro: 'Each area links to the public work that documents it, the same way a finding links back to its source.',
+    intro: 'Each area links to the public work that documents it.',
     documented: 'Documented by', interest: 'Area of interest. No public work yet.',
     tool: 'Tool', article: 'Article', sources: 'sources', source1: 'source',
   },
