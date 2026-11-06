@@ -1,6 +1,7 @@
 # WEB SITE
 
 Personal website.
+
 React 18 · TypeScript · Vite · Tailwind CSS · Lucide. Static build, deployed to GitHub Pages by GitHub Actions.
 
 ## Where to change things
