@@ -21,8 +21,8 @@ const en = {
   about: {
     kicker: 'About me',
     title: 'About me',
-    p1: 'I’m a digital forensic analyst based in Italy. My work is about digital evidence: acquiring it so that it holds up, extracting what matters from it, and explaining clearly what it shows.',
-    p2: 'Alongside forensic work I build open-source tools for the parts of the job that should never be done by hand twice: web acquisitions, exports from X-Ways cases, PDF and image analysis, chat reports. I write about methods, artefacts and CTF challenges on Stranger Forensics.',
+    p1: 'I’m a Digital Forensics Analyst based in Italy, specializing in the acquisition, examination and interpretation of digital evidence. My work focuses on ensuring the integrity, reliability and defensibility of digital evidence',
+    p2: 'Beyond forensic investigations, I develop open-source tools and automation solutions designed to streamline forensic workflows, reduce repetitive tasks and improve efficiency and consistency. My projects cover a range of areas, including web acquisitions, X-Ways Forensics case exports, PDF and image analysis, and other digital forensic applications.I’m also passionate about research, technical experimentation and knowledge sharing. Through Stranger Forensics, I publish articles and practical insights on digital forensic methodologies, forensic artefacts, tool development and Capture The Flag (CTF) challenges, with the goal of contributing to the broader digital forensics community.',
     stats: { repos: 'Open-source repositories', posts: 'Articles on Stranger Forensics', ctf: 'Challenge write-ups', langs: 'Languages in my tools' },
     statsNote: 'Counted live from GitHub and WordPress.',
     approachTitle: 'Principles I build into every tool',
