@@ -6,7 +6,7 @@ const cat = {
   img: { en: 'Image & media analysis', it: 'Analisi immagini e media' },
   ext: { en: 'Data extraction', it: 'Estrazione dati' },
   mob: { en: 'Mobile forensics', it: 'Mobile forensics' },
-  awa: { en: 'Security awareness', it: 'Security awareness' },
+  awa: { en: 'Security awareness', it: 'Forensic Readness' },
   oth: { en: 'Other', it: 'Altro' },
 } satisfies Record<string, Localized>;
 
@@ -75,13 +75,6 @@ export const curated: Record<string, Partial<Project> & { category: Localized }>
     summary: {
       en: 'X-Tension for X-Ways Forensics (x64) that exports the files of a forensic image organised by category, rebuilding each original path. It runs entirely from the command line, handles long paths and exports every category X-Ways assigns.',
       it: "X-Tension per X-Ways Forensics (x64) che esporta i file di un'immagine forense organizzati per categoria, ricostruendo il percorso originale. Funziona interamente da riga di comando, gestisce i percorsi lunghi ed esporta tutte le categorie assegnate da X-Ways.",
-    },
-  },
-  'From-PA-to-a-readable-chat': {
-    category: cat.mob,
-    summary: {
-      en: 'Turns chat reports exported from Cellebrite Physical Analyzer into a readable conversation without losing information, with optional speech-to-text for voice messages.',
-      it: 'Trasforma i report delle chat esportati da Cellebrite Physical Analyzer in una conversazione leggibile senza perdere informazioni, con trascrizione opzionale dei messaggi vocali.',
     },
   },
   'Query-SQL-WhatsApp-db': {
