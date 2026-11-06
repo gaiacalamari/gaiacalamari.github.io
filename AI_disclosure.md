@@ -13,7 +13,3 @@ AI assistants were used as development aids for tasks such as:
 ## Human oversight
 
 All AI-generated or AI-assisted content was reviewed, modified where necessary, and tested by the author before inclusion.
-
-## Questions
-
-For questions about this disclosure or about the development process, please open an issue in this repository.
