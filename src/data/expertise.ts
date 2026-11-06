@@ -28,8 +28,8 @@ export const expertise: ExpertiseArea[] = [
     id: 'mobile',
     title: { en: 'Mobile forensics', it: 'Mobile forensics' },
     text: {
-      en: 'Android and iOS extraction and analysis: encryption states, location artefacts, messaging databases.',
-      it: 'Estrazione e analisi Android e iOS: stati di cifratura, artefatti di posizione, database di messaggistica.',
+      en: 'Android and iOS extraction and analysis: encryption states, location artefacts, messaging databases, OS logs and more.',
+      it: 'Estrazione e analisi Android e iOS: stati di cifratura, artefatti di posizione, database di messaggistica, log di sistema e molto altro.',
     },
     evidence: [
       { kind: 'article', label: 'What can we do with a BFU', href: `${B}/2026/05/25/what-can-we-do-with-a-bfu/` },
@@ -61,7 +61,7 @@ export const expertise: ExpertiseArea[] = [
   },
   {
     id: 'acquisition',
-    title: { en: 'Digital evidence acquisition', it: 'Acquisizione delle evidenze' },
+    title: { en: 'Digital evidence acquisition', it: 'Acquisizione' },
     text: {
       en: 'Hash verification, chain of custody and repeatable procedures built into the tools themselves.',
       it: 'Verifica degli hash, catena di custodia e procedure ripetibili integrate negli strumenti stessi.',
