@@ -5,7 +5,7 @@
  */
 export const site = {
   name: 'Gaia Calamari',
-  role: 'Digital Forensic Analyst',
+  role: 'Digital Forensic Expert',
   location: 'Italy',
   url: 'https://gaiacalamari.github.io',
 
@@ -49,7 +49,7 @@ export const site = {
     file: '',
   },
 
-  defaultLanguage: 'en' as 'en' | 'it',
+  defaultLanguage: 'it' as 'it' | 'en',
 };
 
 export type SiteConfig = typeof site;
