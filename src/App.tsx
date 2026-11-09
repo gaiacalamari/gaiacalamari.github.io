@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Marquee from './components/Marquee';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Method from './sections/Method';
@@ -13,7 +12,6 @@ import Faq from './sections/Faq';
 import Contact from './sections/Contact';
 import { useRepos, usePosts } from './hooks/useRemote';
 import { useI18n } from './i18n';
-import { toolsUsed } from './data/expertise';
 
 export default function App() {
   const { t } = useI18n();
@@ -25,10 +23,6 @@ export default function App() {
       <Navbar />
       <main id="main">
         <Hero repos={repos} posts={posts} />
-        <div className="border-y border-line/70 bg-surface/40 py-7">
-          <p className="sr-only">{t.marquee}</p>
-          <Marquee items={toolsUsed} label={t.marquee} />
-        </div>
         <About projects={repos.projects} posts={posts.posts} />
         <Method />
         <Expertise />

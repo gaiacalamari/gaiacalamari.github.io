@@ -130,10 +130,6 @@
 @keyframes cue { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(8px); opacity: 0; } 100% { opacity: 0; } }
 .cue-dot { animation: cue 1.8s ease-in-out infinite; }
 
-/* Marquee */
-@keyframes marquee { to { transform: translateX(-50%); } }
-.marquee { animation: marquee 38s linear infinite; }
-.marquee-wrap:hover .marquee { animation-play-state: paused; }
 
 /* Method connector line */
 .connector { transform-origin: left; transform: scaleX(0); transition: transform 1.4s cubic-bezier(.4,0,.2,1) .2s; }
@@ -155,7 +151,7 @@
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   .log-line { opacity: 1; animation: none; }
-  .log-bar, .trace, .floaty, .cue-dot, .marquee, .panel-in { animation: none; }
+  .log-bar, .trace, .floaty, .cue-dot, .panel-in { animation: none; }
   .connector { transform: none; transition: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }

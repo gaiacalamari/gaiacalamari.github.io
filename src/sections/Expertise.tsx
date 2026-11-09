@@ -1,6 +1,6 @@
-import { ArrowUpRight, BookOpen, Cloud, Database, Fingerprint, Globe, Monitor, Radar, Smartphone, Workflow, Wrench, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Cloud, HardDrive, Mail, Database, Fingerprint, Globe, Monitor, Radar, Smartphone, Workflow, Wrench, type LucideIcon } from 'lucide-react';
 import { useI18n } from '../i18n';
-import { expertise } from '../data/expertise';
+import { expertise, toolkit } from '../data/expertise';
 import SectionHeader from '../components/SectionHeader';
 import Reveal from '../components/Reveal';
 import Spotlight from '../components/Spotlight';
@@ -8,10 +8,12 @@ import Spotlight from '../components/Spotlight';
 const icon: Record<string, LucideIcon> = {
   computer: Monitor, mobile: Smartphone, cloud: Cloud, web: Globe,
   acquisition: Fingerprint, extraction: Database, automation: Workflow, osint: Radar,
+  ediscovery: Mail, recovery: HardDrive,
 };
 /** Bento layout: wider tiles for the areas with the most public work. */
 const span: Record<string, string> = {
   mobile: 'lg:col-span-2', extraction: 'lg:col-span-2', automation: 'lg:col-span-2', osint: 'lg:col-span-2',
+  ediscovery: 'lg:col-span-2', recovery: 'lg:col-span-2',
 };
 
 export default function Expertise() {
@@ -24,11 +26,12 @@ export default function Expertise() {
           {expertise.map((area, i) => {
             const Icon = icon[area.id] ?? Wrench;
             const documented = area.evidence.length > 0;
+            const solid = documented || area.casework;
             return (
               <Reveal as="li" key={area.id} delay={(i % 4) * 70} className={span[area.id] ?? ''}>
-                <Spotlight className={`card card-hover flex h-full flex-col p-6 ${documented ? '' : 'border-dashed bg-transparent shadow-none'}`}>
+                <Spotlight className={`card card-hover flex h-full flex-col p-6 ${solid ? '' : 'border-dashed bg-transparent shadow-none'}`}>
                   <div className="flex items-start justify-between gap-4">
-                    <span className={`grid h-12 w-12 place-items-center rounded-xl ${documented ? 'bg-gradient-to-br from-accent/20 to-accent2/10 text-accent ring-1 ring-accent/25' : 'bg-raised text-muted ring-1 ring-line'}`}>
+                    <span className={`grid h-12 w-12 place-items-center rounded-xl ${solid ? 'bg-gradient-to-br from-accent/20 to-accent2/10 text-accent ring-1 ring-accent/25' : 'bg-raised text-muted ring-1 ring-line'}`}>
                       <Icon className="h-[22px] w-[22px]" aria-hidden />
                     </span>
                     {documented && <span className="tag">{area.evidence.length} {area.evidence.length === 1 ? t.expertise.source1 : t.expertise.sources}</span>}
@@ -54,6 +57,8 @@ export default function Expertise() {
                           ))}
                         </ul>
                       </>
+                    ) : area.casework ? (
+                      <p className="text-sm text-muted">{t.expertise.casework}</p>
                     ) : (
                       <p className="text-sm italic text-muted">{t.expertise.interest}</p>
                     )}
@@ -63,6 +68,25 @@ export default function Expertise() {
             );
           })}
         </ul>
+
+        <div className="mt-20">
+          <Reveal><h3 className="text-xl font-semibold">{t.expertise.toolkitTitle}</h3></Reveal>
+          <Reveal delay={60}><p className="mt-2 max-w-prose text-muted">{t.expertise.toolkitIntro}</p></Reveal>
+          <dl className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {toolkit.map((g, i) => (
+              <Reveal key={g.title.en} delay={(i % 3) * 70} className="border-t border-line pt-4">
+                <dt className="font-semibold">{g.title[lang]}</dt>
+                <dd>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {g.tools.map((tool) => (
+                      <li key={tool} className="rounded-lg border border-line bg-raised/60 px-2.5 py-1 text-[0.9rem]">{tool}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </Reveal>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );
