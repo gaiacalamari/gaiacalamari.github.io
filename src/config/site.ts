@@ -24,7 +24,7 @@ export const site = {
     /** Shown in "Featured tools", in this order. */
     featured: ['WEBCQUISITION', 'PDFTrace', 'ForensicVisionPro', 'XT_ExtractDocsMail-'],
     /** Never listed (e.g. this website's own repository). */
-    hidden: ['gaiacalamari.github.io'],
+    hidden: ['gaiacalamari.github.io', 'gaiacalamari'],
     showForks: false,
   },
 
